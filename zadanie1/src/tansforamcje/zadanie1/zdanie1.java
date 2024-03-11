@@ -105,6 +105,7 @@ public class zdanie1 {
 
         //zadanie 4
 
+        /*
         try {
             Punkt p1 = new Punkt(2, 2); // Początkowy punkt (2, 2)
             System.out.println("Początkowy punkt: " + p1);
@@ -128,5 +129,22 @@ public class zdanie1 {
         } catch (BrakTransformacjiOdwrotnejException ex) {
             ex.printStackTrace();
         }
+
+         */
+
+        //punkt 4 z zadania na zajęciach
+
+        Obrot3D obrotX = new Obrot3D(Math.PI/4, 0, Math.PI/4);
+        Obrot3D obrotY = new Obrot3D(0, Math.PI/4, 0);
+        Translacja3D translacja = new Translacja3D(1, 2, 3);
+
+        ZlozenieTransformacji3DTab zlozenie = new ZlozenieTransformacji3DTab( obrotX, translacja, translacja);
+
+        Punkt3D punkt = new Punkt3D(1, 1, 1);
+        Punkt wynik = zlozenie.transformuj(punkt);
+
+        System.out.println("Punkt przed transformacją: " + punkt);
+        System.out.println("Punkt po transformacji: " + wynik);
+
     }
 }
